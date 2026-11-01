@@ -5,7 +5,7 @@ import Link from "next/link";
 import Drawer from "@/components/ui/Drawer";
 import { MenuIcon } from "@/components/ui/icons";
 import { categories } from "@/lib/categories";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "@/components/layout/ThemeToggle";
 
 const links = [
   ...categories.map((c) => ({
