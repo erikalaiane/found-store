@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { categories } from "@/lib/categories";
-import { BagIcon, SearchIcon } from "@/components/ui/icons";
+import { SearchIcon } from "@/components/ui/icons";
+import CartButton from "./CartButton";
 import MobileMenu from "../ui/MobileMenu";
 import ThemeToggle from "./ThemeToggle";
 
@@ -42,9 +43,7 @@ export default function Header() {
           <div className="hidden md:block">
             <ThemeToggle />
           </div>
-          <Link href="/carrinho" aria-label="Carrinho" className={iconButton}>
-            <BagIcon />
-          </Link>
+          <CartButton />
         </div>
       </div>
     </header>

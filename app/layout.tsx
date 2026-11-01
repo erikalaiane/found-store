@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/components/cart/CartProvider";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
@@ -34,10 +35,12 @@ export default function RootLayout({
       </head>
       <body className="flex min-h-screen flex-col antialiased">
         <ToastProvider>
-          <AnnouncementBar />
-          <Header />
-          <div className="flex-1">{children}</div>
-          <Footer />
+          <CartProvider>
+            <AnnouncementBar />
+            <Header />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </CartProvider>
         </ToastProvider>
       </body>
     </html>
