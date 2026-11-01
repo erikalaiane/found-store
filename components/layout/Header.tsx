@@ -9,19 +9,20 @@ const iconButton = "rounded-full p-2 transition hover:bg-surface";
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-6 md:gap-8">
-        <MobileMenu />
-
-        <Link
-          href="/"
-          className="font-display text-3xl tracking-wide text-heading"
-        >
-          FOUND STORE
-        </Link>
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6 md:grid md:grid-cols-[1fr_auto_1fr]">
+        <div className="flex items-center gap-3">
+          <MobileMenu />
+          <Link
+            href="/"
+            className="font-display text-3xl tracking-wide text-heading"
+          >
+            FOUND STORE
+          </Link>
+        </div>
 
         <nav
           aria-label="Categorias"
-          className="hidden flex-1 items-center gap-6 md:flex"
+          className="hidden items-center gap-8 md:flex"
         >
           {categories.map((c) => (
             <Link
@@ -34,7 +35,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-1">
+        <div className="flex items-center gap-1 justify-self-end">
           <Link href="/busca" aria-label="Buscar produtos" className={iconButton}>
             <SearchIcon />
           </Link>
