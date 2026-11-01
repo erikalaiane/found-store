@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
+import AnnouncementBar from "@/components/layout/AnnouncementBar";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
 import { ToastProvider } from "@/components/ui/ToastProvider";
-
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const bebas = Bebas_Neue({
@@ -30,8 +32,13 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="antialiased">
-        <ToastProvider>{children}</ToastProvider>
+      <body className="flex min-h-screen flex-col antialiased">
+        <ToastProvider>
+          <AnnouncementBar />
+          <Header />
+          <div className="flex-1">{children}</div>
+          <Footer />
+        </ToastProvider>
       </body>
     </html>
   );
