@@ -9,7 +9,48 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-geist-mono);@import "tailwindcss";
+
+/* Tema escuro (padrão) */
+:root {
+  --background: #1a1a1a;
+  --foreground: #f2ead9;
+  --surface: #242424;
+  --border: #3a3a3a;
+  --heading: #c1ab85;
+
+  --primary: #3e6868;
+  --accent: #c94e44;
+  --sand: #c1ab85;
+  --cream: #f2ead9;
+}
+
+/* Tema claro */
+[data-theme="light"] {
+  --background: #f2ead9;
+  --foreground: #1a1a1a;
+  --surface: #faf5ea;
+  --border: #d9cdb4;
+  --heading: #3e6868;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-heading: var(--heading);
+
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-sand: var(--sand);
+  --color-cream: var(--cream);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
 }
 
 @media (prefers-color-scheme: dark) {
