@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+# 🛍️ Found Store
 
-First, run the development server:
+E-commerce fictício de moda, tecnologia e acessórios, criado como projeto de portfólio.
+
+<a href="https://found-store.vercel.app/">
+  <img src="https://img.shields.io/badge/VER_O_SITE-C94E44?style=for-the-badge&logo=vercel&logoColor=white" alt="Ver o site publicado" />
+</a>
+
+<br /><br />
+
+<img src="docs/preview.png" alt="Prévia do site Found Store" width="100%" />
+
+<br />
+
+> Projeto conceito: nomes, marcas, pedidos, avaliações e contas de usuário são fictícios. Nenhuma compra é processada de verdade.
+
+</div>
+
+---
+
+## 🚀 Stack
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
+<img src="https://img.shields.io/badge/REACT-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+<img src="https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+<img src="https://img.shields.io/badge/TAILWIND_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+<img src="https://img.shields.io/badge/VITEST-6E9F18?style=for-the-badge&logo=vitest&logoColor=white" alt="Vitest" />
+<img src="https://img.shields.io/badge/TESTING_LIBRARY-E33332?style=for-the-badge&logo=testinglibrary&logoColor=white" alt="Testing Library" />
+<img src="https://img.shields.io/badge/VERCEL-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
+
+</div>
+
+---
+
+## 📄 Páginas
+
+- **Home**: hero, benefícios, coleções, mais vendidos em carrossel, promoção com contagem regressiva, depoimentos e newsletter
+- **Categoria**: grade de produtos com filtros por preço e avaliação, ordenação e contador de resultados
+- **Produto**: galeria, seleção de tamanho, descrição, avaliações e produtos relacionados
+- **Busca**: pesquisa rápida de produtos
+- **Carrinho e checkout**: carrinho com estado global, barra de frete grátis e finalização simulada
+- **Área do cliente**: login, cadastro, pedidos e favoritos, em rota protegida
+- **Institucionais**: sobre nós, contato, FAQ, entrega e devoluções, termos e privacidade
+- **404**: página para endereços que não existem
+
+---
+
+## ✨ Recursos
+
+- Mini-carrinho lateral, modal de desconto na primeira visita, visualização rápida do produto e guia de tamanhos
+- Tema escuro por padrão e modo claro, com a preferência salva no navegador
+- Favoritos e produtos vistos recentemente
+- Testes automatizados dos componentes e dos fluxos principais
+
+---
+
+## 🎨 Decisões de design
+
+- Paleta de inspiração retrô: verde-azulado `#3E6868`, coral `#C94E44` e areia `#C1AB85`, sobre fundo grafite
+- Texto sobre as cores de destaque em creme `#F2EAD9`, para manter o contraste legível
+- Fontes Bebas Neue nos títulos e Inter no texto
+- Mini design system próprio (Button, Input, Card, Badge, Modal e Drawer) com props tipadas em TypeScript
+- Produtos consumidos da [Fake Store API](https://fakestoreapi.com/), com tipos próprios e uma camada única de acesso aos dados
+- Rótulos nos campos de formulário, textos alternativos nas imagens e navegação pelo teclado
+
+---
+
+## 🗺️ Status do projeto
+
+Em desenvolvimento, com um commit por funcionalidade.
+
+- [x] Projeto criado com Next.js, TypeScript e Tailwind
+- [ ] Paleta, fontes e tema claro/escuro
+- [ ] Design system
+- [ ] Home
+- [ ] Categoria e produto
+- [ ] Carrinho e checkout
+- [ ] Conta e rota protegida
+- [ ] Páginas institucionais
+- [ ] Testes com Vitest e Testing Library
+- [ ] Deploy na Vercel
+
+---
+
+## 💻 Como rodar
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para gerar a versão de produção:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📬 Contato
 
-To learn more about Next.js, take a look at the following resources:
+<div align="center">
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Gostou do projeto? Vamos conversar!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+<a href="https://www.linkedin.com/in/erika-laiane-azevedo">
+  <img src="https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge" alt="LinkedIn" />
+</a>
+<a href="https://mail.google.com/mail/?view=cm&to=erikalaianeazevedo03@gmail.com">
+  <img src="https://img.shields.io/badge/GMAIL-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+</a>
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</div>
