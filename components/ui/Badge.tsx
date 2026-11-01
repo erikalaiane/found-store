@@ -20,7 +20,7 @@ export default function Badge({
   return (
     <span
       className={cn(
-        "inline-block rounded-full px-3 py-1 text-xs font-semibold",
+        "inline-block w-fit rounded-full px-3 py-1 text-xs font-semibold",
         tones[tone],
         className
       )}
