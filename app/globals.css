@@ -34,6 +34,9 @@
   --color-accent: var(--accent);
   --color-sand: var(--sand);
   --color-cream: var(--cream);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bebas);
 }
 
 body {
