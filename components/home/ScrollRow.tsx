@@ -35,8 +35,7 @@ export default function ScrollRow({
         ref={ref}
         tabIndex={0}
         aria-label={label}
-        className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand"
-      >
+className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-width:none] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sand [&::-webkit-scrollbar]:hidden">
         {children}
       </ul>
 
