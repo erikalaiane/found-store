@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import Badge from "@/components/ui/Badge";
+import ButtonLink from "@/components/ui/ButtonLink";
 import Card from "@/components/ui/Card";
 import Rating from "@/components/ui/Rating";
+import { needsSize } from "@/lib/cart";
 import { formatPrice, getPricing } from "@/lib/format";
 import type { Product } from "@/lib/types";
 import AddToCartButton from "./AddToCartButton";
@@ -45,7 +47,18 @@ export default function ProductCard({ product }: { product: Product }) {
         </p>
       </Link>
 
-      <AddToCartButton />
+      {needsSize(product.category) ? (
+        <ButtonLink
+          href={`/produtos/${product.id}`}
+          variant="outline"
+          size="sm"
+          className="w-full"
+        >
+          Escolher tamanho
+        </ButtonLink>
+      ) : (
+        <AddToCartButton product={product} />
+      )}
     </Card>
   );
 }

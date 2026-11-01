@@ -88,9 +88,8 @@ export default async function ProductPage({ params }: Props) {
             </p>
 
             <ProductPurchase
-              productId={product.id}
-              title={product.title}
-              hasSizes={Boolean(category?.slug.startsWith("roupas"))}
+                product={product}
+                hasSizes={Boolean(category?.slug.startsWith("roupas"))}
             />
 
             <details open className={detailBox}>

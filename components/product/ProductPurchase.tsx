@@ -1,9 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useCartUI } from "@/components/cart/CartProvider";
 import Button from "@/components/ui/Button";
 import { useToast } from "@/components/ui/ToastProvider";
+import { cartActions } from "@/lib/cart-store";
 import { cn } from "@/lib/cn";
+import { getPricing } from "@/lib/format";
+import type { Product } from "@/lib/types";
 
 const sizes = ["P", "M", "G", "GG", "XG"];
 
@@ -26,25 +30,32 @@ function HeartIcon({ filled }: { filled: boolean }) {
 }
 
 type Props = {
-  productId: number;
-  title: string;
+  product: Product;
   hasSizes: boolean;
 };
 
-export default function ProductPurchase({ productId, title, hasSizes }: Props) {
+export default function ProductPurchase({ product, hasSizes }: Props) {
   const toast = useToast();
+  const { openCart } = useCartUI();
   const [size, setSize] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [favorite, setFavorite] = useState(false);
 
-  const soldOut = sizes[productId % sizes.length];
+  const soldOut = sizes[product.id % sizes.length];
 
   function handleAdd() {
     if (hasSizes && !size) {
       setError("Escolha um tamanho para continuar.");
       return;
     }
-    toast(`${title.slice(0, 40)} adicionado ao carrinho!`, "success");
+    cartActions.add({
+      productId: product.id,
+      title: product.title,
+      image: product.image,
+      price: getPricing(product.price, product.id).current,
+      size: hasSizes ? size : null,
+    });
+    openCart();
   }
 
   function handleFavorite() {
