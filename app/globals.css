@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
-/* Tema escuro (padrão) */
 :root {
+  color-scheme: dark;
   --background: #1a1a1a;
   --foreground: #f2ead9;
   --surface: #242424;
@@ -12,15 +12,21 @@
   --accent: #c94e44;
   --sand: #c1ab85;
   --cream: #f2ead9;
+
+  --glow-a: 28%;
+  --glow-b: 14%;
 }
 
-/* Tema claro */
 [data-theme="light"] {
+  color-scheme: light;
   --background: #f2ead9;
   --foreground: #1a1a1a;
   --surface: #faf5ea;
   --border: #d9cdb4;
   --heading: #3e6868;
+
+  --glow-a: 16%;
+  --glow-b: 10%;
 }
 
 @theme inline {
@@ -36,7 +42,68 @@
   --color-cream: var(--cream);
 
   --font-sans: var(--font-inter);
-  --font-display: var(--font-bebas);
+  --font-display: var(--font-abril);
+  --font-condensed: var(--font-bebas);
+  --font-mono: var(--font-jetbrains);
+}
+
+@theme {
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+body {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(
+      60rem 28rem at 8% -8%,
+      color-mix(in oklab, var(--primary) var(--glow-a), transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      40rem 24rem at 100% 8%,
+      color-mix(in oklab, var(--accent) var(--glow-b), transparent),
+      transparent 70%
+    );
+  background-repeat: no-repeat;
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--cream);
+}
+
+/* Barra de rolagem fina, na cor areia */
+html,
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sand) transparent;
+}
+
+html::-webkit-scrollbar,
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+html::-webkit-scrollbar-track,
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: color-mix(in oklab, var(--sand) 60%, transparent);
+  border-radius: 9999px;
 }
 
 input:-webkit-autofill,
@@ -45,9 +112,4 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--foreground);
   box-shadow: 0 0 0 1000px var(--surface) inset;
   caret-color: var(--foreground);
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
 }

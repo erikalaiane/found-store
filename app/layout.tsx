@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Inter } from "next/font/google";
+import {
+  Abril_Fatface,
+  Bebas_Neue,
+  Inter,
+  JetBrains_Mono,
+} from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/components/cart/CartProvider";
 import AnnouncementBar from "@/components/layout/AnnouncementBar";
@@ -13,10 +18,19 @@ const bebas = Bebas_Neue({
   subsets: ["latin"],
   weight: "400",
 });
+const abril = Abril_Fatface({
+  variable: "--font-abril",
+  subsets: ["latin"],
+  weight: "400",
+});
+const mono = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Found Store",
-  description: "Moda, tecnologia e acessórios com identidade própria.",
+  description: "Moda, tecnologia, casa e beleza com identidade própria.",
 };
 
 const themeScript = `try{if(localStorage.getItem("theme")==="light"){document.documentElement.dataset.theme="light"}}catch(e){}`;
@@ -28,7 +42,7 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       suppressHydrationWarning
-      className={`${inter.variable} ${bebas.variable}`}
+      className={`${inter.variable} ${bebas.variable} ${abril.variable} ${mono.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
