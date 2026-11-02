@@ -6,7 +6,7 @@ export type ButtonSize = "sm" | "md" | "lg";
 
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-primary text-cream hover:brightness-110",
-  accent: "bg-accent text-cream hover:brightness-110",
+  accent: "bg-accent text-cream shadow-[0_0_28px_-8px] shadow-accent hover:brightness-110",
   outline: "border border-border text-foreground hover:bg-surface",
   ghost: "text-foreground hover:bg-surface",
 };
