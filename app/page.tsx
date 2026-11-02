@@ -7,6 +7,7 @@ import Testimonials from "@/components/home/Testimonials";
 import { heroCopy } from "@/data/hero";
 import { getProducts } from "@/lib/api";
 import { categories } from "@/lib/categories";
+import Marquee from "@/components/home/Marquee";
 
 export default async function Home() {
   const products = await getProducts();
@@ -36,6 +37,7 @@ export default async function Home() {
   return (
     <div className="mx-auto flex max-w-6xl flex-col gap-16 px-6 py-6 md:py-10">
       <HeroCarousel slides={slides} />
+      <Marquee />
       <CategoryStrip products={products} />
       <BestSellers products={bestSellers} />
       {promoProduct && <PromoBanner product={promoProduct} />}
