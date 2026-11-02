@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Badge from "@/components/ui/Badge";
 import ButtonLink from "@/components/ui/ButtonLink";
 import {
   ChevronLeftIcon,
@@ -64,9 +63,16 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             )}
           >
             <div className="flex flex-col items-start gap-5">
-              <Badge tone="sand">{slide.label}</Badge>
-              <h1 className="font-display text-5xl leading-none text-heading md:text-7xl">
+              <span className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background/40 px-3 py-1 font-mono text-[0.7rem] tracking-widest text-sand uppercase backdrop-blur">
+                <span className="relative flex size-2">
+                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-75 motion-reduce:animate-none" />
+                  <span className="relative inline-flex size-2 rounded-full bg-accent" />
+                </span>
+                {slide.label}
+              </span>
+              <h1 className="font-display text-5xl leading-[1.05] text-heading md:text-6xl">
                 {slide.title}
+                <span className="text-accent">.</span>
               </h1>
               <p className="max-w-md text-lg text-foreground/80">{slide.text}</p>
               <ButtonLink

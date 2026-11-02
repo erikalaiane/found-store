@@ -41,7 +41,7 @@ export default function Countdown() {
           key={unit.label}
           className="min-w-16 rounded-xl bg-black/25 px-3 py-2 text-center"
         >
-          <p className="font-display text-3xl leading-none">{unit.value}</p>
+          <p className="font-mono text-3xl leading-none font-bold">{unit.value}</p>
           <p className="text-xs uppercase opacity-80">{unit.label}</p>
         </div>
       ))}
