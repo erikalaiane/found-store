@@ -9,8 +9,6 @@ import { cn } from "@/lib/cn";
 import { getPricing } from "@/lib/format";
 import type { Product } from "@/lib/types";
 
-const sizes = ["P", "M", "G", "GG", "XG"];
-
 function HeartIcon({ filled }: { filled: boolean }) {
   return (
     <svg
@@ -31,17 +29,19 @@ function HeartIcon({ filled }: { filled: boolean }) {
 
 type Props = {
   product: Product;
-  hasSizes: boolean;
+  sizes: string[] | null;
 };
 
-export default function ProductPurchase({ product, hasSizes }: Props) {
+export default function ProductPurchase({ product, sizes }: Props) {
+  const hasSizes = sizes !== null;
   const toast = useToast();
   const { openCart } = useCartUI();
   const [size, setSize] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [favorite, setFavorite] = useState(false);
 
-  const soldOut = sizes[product.id % sizes.length];
+  const soldOut = sizes ? sizes[product.id % sizes.length] : null;
+
 
   function handleAdd() {
     if (hasSizes && !size) {
@@ -66,7 +66,7 @@ export default function ProductPurchase({ product, hasSizes }: Props) {
 
   return (
     <div className="flex flex-col gap-5">
-      {hasSizes && (
+      {sizes && (
         <fieldset>
           <legend className="mb-3 text-sm font-medium text-sand">Tamanho</legend>
           <div className="flex flex-wrap gap-2">

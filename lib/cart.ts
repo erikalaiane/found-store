@@ -21,8 +21,14 @@ export const COUPONS: Record<string, number> = { FOUND10: 10 };
 
 const round = (n: number) => Math.round(n * 100) / 100;
 
+export function getSizes(category: string): string[] | null {
+  if (category.endsWith("clothing")) return ["P", "M", "G", "GG", "XG"];
+  if (category === "shoes") return ["36", "37", "38", "39", "40", "41", "42", "43"];
+  return null;
+}
+
 export function needsSize(category: string) {
-  return category.endsWith("clothing");
+  return getSizes(category) !== null;
 }
 
 export function itemKey(item: Pick<CartItem, "productId" | "size">) {

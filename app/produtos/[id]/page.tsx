@@ -10,6 +10,7 @@ import Rating from "@/components/ui/Rating";
 import { getProduct, getProducts, getProductsByCategory } from "@/lib/api";
 import { categories } from "@/lib/categories";
 import { formatPrice, getPricing } from "@/lib/format";
+import { getSizes } from "@/lib/cart";
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -87,10 +88,7 @@ export default async function ProductPage({ params }: Props) {
                 : "Frete grátis em compras acima de R$ 299."}
             </p>
 
-            <ProductPurchase
-                product={product}
-                hasSizes={Boolean(category?.slug.startsWith("roupas"))}
-            />
+            <ProductPurchase product={product} sizes={getSizes(product.category)} />
 
             <details open className={detailBox}>
               <summary className={summary}>
