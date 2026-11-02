@@ -15,5 +15,6 @@ export type CategoryInfo = {
   slug: string;
   apiName: string;
   label: string;
+    short: string;
   description: string;
 };
