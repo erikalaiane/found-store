@@ -3,29 +3,11 @@
 import { useState } from "react";
 import { useCartUI } from "@/components/cart/CartProvider";
 import Button from "@/components/ui/Button";
-import { useToast } from "@/components/ui/ToastProvider";
 import { cartActions } from "@/lib/cart-store";
 import { cn } from "@/lib/cn";
 import { getPricing } from "@/lib/format";
 import type { Product } from "@/lib/types";
-
-function HeartIcon({ filled }: { filled: boolean }) {
-  return (
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill={filled ? "currentColor" : "none"}
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z" />
-    </svg>
-  );
-}
+import FavoriteButton from "./FavoriteButton";
 
 type Props = {
   product: Product;
@@ -33,18 +15,14 @@ type Props = {
 };
 
 export default function ProductPurchase({ product, sizes }: Props) {
-  const hasSizes = sizes !== null;
-  const toast = useToast();
   const { openCart } = useCartUI();
   const [size, setSize] = useState<string | null>(null);
   const [error, setError] = useState("");
-  const [favorite, setFavorite] = useState(false);
 
   const soldOut = sizes ? sizes[product.id % sizes.length] : null;
 
-
   function handleAdd() {
-    if (hasSizes && !size) {
+    if (sizes && !size) {
       setError("Escolha um tamanho para continuar.");
       return;
     }
@@ -53,15 +31,9 @@ export default function ProductPurchase({ product, sizes }: Props) {
       title: product.title,
       image: product.image,
       price: getPricing(product.price, product.id).current,
-      size: hasSizes ? size : null,
+      size: sizes ? size : null,
     });
     openCart();
-  }
-
-  function handleFavorite() {
-    const next = !favorite;
-    setFavorite(next);
-    toast(next ? "Adicionado aos favoritos." : "Removido dos favoritos.", "info");
   }
 
   return (
@@ -112,16 +84,7 @@ export default function ProductPurchase({ product, sizes }: Props) {
         <Button variant="accent" size="lg" className="flex-1" onClick={handleAdd}>
           Adicionar ao carrinho
         </Button>
-        <Button
-          variant="outline"
-          size="lg"
-          aria-pressed={favorite}
-          aria-label={favorite ? "Remover dos favoritos" : "Adicionar aos favoritos"}
-          onClick={handleFavorite}
-          className={favorite ? "text-accent" : undefined}
-        >
-          <HeartIcon filled={favorite} />
-        </Button>
+        <FavoriteButton productId={product.id} size="lg" />
       </div>
     </div>
   );

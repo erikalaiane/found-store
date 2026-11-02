@@ -8,12 +8,14 @@ import { needsSize } from "@/lib/cart";
 import { formatPrice, getPricing } from "@/lib/format";
 import type { Product } from "@/lib/types";
 import AddToCartButton from "./AddToCartButton";
+import FavoriteButton from "./FavoriteButton";
 
 export default function ProductCard({ product }: { product: Product }) {
   const { original, current, discount } = getPricing(product.price, product.id);
 
   return (
     <Card interactive className="relative flex h-full flex-col gap-3">
+      <FavoriteButton productId={product.id} className="absolute top-6 right-6 z-10" />
       {discount > 0 && (
         <Badge tone="accent" className="absolute top-6 left-6 z-10">
           -{discount}%
