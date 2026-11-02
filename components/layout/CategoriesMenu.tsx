@@ -76,6 +76,13 @@ export default function CategoriesMenu() {
               </li>
             ))}
           </ul>
+          <Link
+            href="/categorias"
+            onClick={() => setOpen(false)}
+            className="mt-2 block rounded-xl px-3 py-2 text-center font-mono text-xs tracking-widest text-sand uppercase transition hover:bg-background"
+            >
+            Ver todas as categorias →
+            </Link>
         </div>
       )}
     </div>
