@@ -19,7 +19,7 @@ export default function CartDrawer({ open, onClose }: Props) {
       onClose={onClose}
       title={count > 0 ? `Seu carrinho (${count})` : "Seu carrinho"}
     >
-      <div className="flex h-[calc(100dvh-8.5rem)] flex-col">
+      <div className="flex min-h-0 flex-1 flex-col">
         {items.length === 0 ? (
           <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
             <p className="font-display text-3xl text-sand">Carrinho vazio</p>
@@ -34,7 +34,7 @@ export default function CartDrawer({ open, onClose }: Props) {
           <>
             <FreeShippingBar subtotal={subtotal} />
 
-            <ul className="mt-4 flex-1 divide-y divide-border overflow-y-auto pr-1">
+            <ul className="scroll-thin mt-4 min-h-0 flex-1 divide-y divide-border overflow-y-auto pr-2">
               {items.map((item) => (
                 <li key={itemKey(item)} className="py-4">
                   <CartItemRow item={item} />
