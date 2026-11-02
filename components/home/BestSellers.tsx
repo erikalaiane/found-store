@@ -5,7 +5,7 @@ import SectionHeading from "./SectionHeading";
 
 export default function BestSellers({ products }: { products: Product[] }) {
   return (
-    <section>
+    <section id="mais-vendidos" className="scroll-mt-24">
       <SectionHeading eyebrow="Produtos queridinhos" title="Mais vendidos" index="02" ghost="Destaques" />
       <ScrollRow label="Produtos mais vendidos">
         {products.map((product) => (
