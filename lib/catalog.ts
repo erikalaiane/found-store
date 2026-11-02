@@ -1,5 +1,6 @@
 import { getPricing } from "./format";
 import type { Product } from "./types";
+import { categories } from "./categories"
 
 export type SortKey =
   | "relevancia"
@@ -85,4 +86,21 @@ export function applyFilters(products: Product[], filters: Filters) {
       break;
   }
   return sorted;
+}
+
+const normalize = (text: string) =>
+  text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+
+export function searchProducts(products: Product[], query: string) {
+  const terms = normalize(query).split(/\s+/).filter(Boolean);
+  if (terms.length === 0) return [];
+
+  return products.filter((p) => {
+    const label = categories.find((c) => c.apiName === p.category)?.label ?? "";
+    const haystack = normalize(`${p.title} ${p.description} ${label}`);
+    return terms.every((term) => haystack.includes(term));
+  });
 }
