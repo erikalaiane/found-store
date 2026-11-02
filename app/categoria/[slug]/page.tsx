@@ -33,8 +33,12 @@ export default async function CategoryPage({ params }: Props) {
       />
 
       <header className="mt-4 mb-10">
-        <h1 className="font-display text-6xl text-heading md:text-8xl">
+        <p className="mb-2 font-mono text-xs tracking-widest text-accent uppercase">
+          {"// Categoria"}
+        </p>
+        <h1 className="font-display text-5xl text-heading md:text-7xl">
           {category.label}
+          <span className="text-accent">.</span>
         </h1>
         <p className="mt-2 max-w-xl text-lg text-foreground/80">
           {category.description}
