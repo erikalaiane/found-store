@@ -39,7 +39,7 @@ function Avatar({ name, src }: { name: string; src?: string }) {
 export default function Testimonials() {
   return (
     <section>
-      <SectionHeading eyebrow="Quem já comprou" title="O que dizem por aí" />
+      <SectionHeading eyebrow="Quem já comprou" title="O que dizem por aí" index="03" ghost="Clientes" />
       <ul className="grid gap-4 md:grid-cols-3">
         {testimonials.map((t) => (
           <li key={t.name}>

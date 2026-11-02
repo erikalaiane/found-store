@@ -7,7 +7,7 @@ import SectionHeading from "./SectionHeading";
 export default function CategoryStrip({ products }: { products: Product[] }) {
   return (
     <section aria-labelledby="categorias-titulo">
-      <SectionHeading eyebrow="Nossas categorias" title="Navegue por categoria" />
+      <SectionHeading eyebrow="Nossas categorias" title="Navegue por categoria" index="01" ghost="Categorias" />
       <ul id="categorias-titulo" className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {categories.map((category) => {
           const product = products.find((p) => p.category === category.apiName);
