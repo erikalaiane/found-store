@@ -89,13 +89,7 @@ export default function Footer() {
             <span aria-hidden className="h-px w-6 bg-accent" />
           </p>
 
-          <p className="inline-flex items-center gap-2 rounded-full border border-primary bg-primary/15 px-4 py-1.5 font-mono text-[0.65rem] tracking-widest text-sand uppercase">
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-sand opacity-75 motion-reduce:animate-none" />
-              <span className="relative inline-flex size-2 rounded-full bg-sand" />
-            </span>
-            Loja aberta 24h
-          </p>
+          
         </div>
       </div>
 
@@ -107,9 +101,17 @@ export default function Footer() {
             <h3 className={columnTitle}>
               <span className="text-accent">✦</span> Filosofia
             </h3>
-            <p className="mx-auto max-w-[16rem] font-display text-base text-accent italic">
+            <p className="mx-auto mb-2 max-w-[16rem] font-display text-base text-accent italic">
               “Estilo é encontrar o que já era seu.”
             </p>
+            
+            <p className="inline-flex items-center gap-2 rounded-full border border-primary bg-primary/15 px-4 py-1.5 font-mono text-[0.65rem] tracking-widest text-sand uppercase">
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-sand opacity-75 motion-reduce:animate-none" />
+              <span className="relative inline-flex size-2 rounded-full bg-sand" />
+            </span>
+            Loja aberta 24h
+          </p>
           </div>
         </div>
       </div>
