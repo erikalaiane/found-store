@@ -1,7 +1,6 @@
 "use client";
 
 import { useCartUI } from "@/components/cart/CartProvider";
-import { BagIcon } from "@/components/ui/icons";
 import { useCart } from "@/lib/use-cart";
 import { CartIcon } from "@/components/ui/icons";
 

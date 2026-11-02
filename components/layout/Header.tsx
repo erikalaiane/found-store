@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SearchIcon } from "@/components/ui/icons";
+import { SearchIcon, UserIcon } from "@/components/ui/icons";
 import CartButton from "./CartButton";
 import CategoriesMenu from "./CategoriesMenu";
 import MobileMenu from "../ui/MobileMenu";
@@ -40,6 +40,8 @@ export default function Header() {
           </Link>
         </nav>
 
+        
+
         <div className="flex items-center gap-1 justify-self-end">
           <Link href="/busca" aria-label="Buscar produtos" className={iconButton}>
             <SearchIcon />
@@ -47,6 +49,9 @@ export default function Header() {
           <div className="hidden md:block">
             <ThemeToggle />
           </div>
+          <Link href="/conta" aria-label="Minha conta" className={iconButton}>
+          <UserIcon />
+        </Link>
           <CartButton />
         </div>
       </div>

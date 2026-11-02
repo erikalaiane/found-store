@@ -12,6 +12,7 @@ const links = [
     href: `/categoria/${c.slug}`,
     label: c.label,
   })),
+  { href: "/conta", label: "Minha conta" },
   { href: "/sobre", label: "Sobre nós" },
   { href: "/faq", label: "Perguntas frequentes" },
   { href: "/contato", label: "Contato" },
