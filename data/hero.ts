@@ -25,4 +25,29 @@ export const heroCopy: Record<string, HeroCopy> = {
     text: "Casacos, jaquetas e peças versáteis pensadas para a sua rotina.",
     cta: "Ver roupas femininas",
   },
+    calcados: {
+    title: "Cada passo com estilo",
+    text: "Tênis, botas, sapatos e sandálias com conforto de verdade para a sua rotina.",
+    cta: "Ver calçados",
+  },
+  acessorios: {
+    title: "O detalhe que completa",
+    text: "Bolsas, óculos, bonés e relógios para dar personalidade a qualquer look.",
+    cta: "Ver acessórios",
+  },
+  "skin-care": {
+    title: "Pele cuidada, rotina leve",
+    text: "Séruns, hidratantes e protetores para uma rotina simples que funciona.",
+    cta: "Ver skin care",
+  },
+  decoracao: {
+    title: "Sua casa com a sua cara",
+    text: "Vasos, velas, quadros e plantas para transformar qualquer cantinho.",
+    cta: "Ver decoração",
+  },
+  moveis: {
+    title: "Conforto que combina com você",
+    text: "Poltronas, sofás, camas e luminárias para montar o seu espaço ideal.",
+    cta: "Ver móveis",
+  },
 };
